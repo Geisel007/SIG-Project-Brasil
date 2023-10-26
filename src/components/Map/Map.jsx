@@ -1,11 +1,12 @@
 // React
 import React from 'react'
 // Leaflet
-import { MapContainer, TileLayer, GeoJSON, Marker, CircleMarker } from 'react-leaflet'
+import { MapContainer, TileLayer, GeoJSON, useMapEvents , CircleMarker } from 'react-leaflet'
 // Styles
 import 'leaflet/dist/leaflet.css'
 // Data
 import DataFiltered from '../../../grassData/filtered_data.json'
+import * as turf from "@turf/turf"
 
 /**
 Map component that renders the React Router, is the root component of the application,
@@ -18,6 +19,19 @@ const Map = ({
   geoJson
 }) => {
 
+  const handleMapClick = (e) => {
+    const { lat, lng } = e.latlng;
+
+    geoJson.features.map(city => {
+      console.log(city)
+    })
+
+    console.log(e)
+
+
+    alert(`Clicked at: ${lat}, ${lng}`);
+  };
+
   return (
     <MapContainer
       center={[latitude, longitude]}
@@ -27,6 +41,7 @@ const Map = ({
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      <MapEventsHandler handleMapClick={handleMapClick} />
       <GeoJSON data={geoJson} />
       {
         DataFiltered.map((point, index) => {
@@ -47,5 +62,12 @@ const Map = ({
     </MapContainer> 
   )
 }
+
+const MapEventsHandler = ({ handleMapClick }) => {
+  useMapEvents({
+    click: (e) => handleMapClick(e),
+  });
+  return null;
+};
 
 export default Map
