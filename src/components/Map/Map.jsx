@@ -19,17 +19,27 @@ const Map = ({
   geoJson
 }) => {
 
+
   const handleMapClick = (e) => {
     const { lat, lng } = e.latlng;
 
-    geoJson.features.map(city => {
-      console.log(city)
-    })
+    const point = turf.point([lng, lat]);
 
-    console.log(e)
+    geoJson.features.forEach(city => {
+      const polygon = turf.polygon(city.geometry.coordinates);
+      const isInside = turf.booleanPointInPolygon(point, polygon);
+      if (isInside) {
 
+        const NAME_0 = city.properties.NAME_0;
+        const NAME_1 = city.properties.NAME_1;
+        const NAME_2 = city.properties.NAME_2;
+        const NAME_3 = city.properties.NAME_3;
 
-    alert(`Clicked at: ${lat}, ${lng}`);
+        const data = [NAME_0, NAME_1, NAME_2, NAME_3].join(', ')
+        alert(`Clicked at: ${lat}, ${lng}.\nCity ${data}`);
+        return;
+      }
+    });
   };
 
   return (
