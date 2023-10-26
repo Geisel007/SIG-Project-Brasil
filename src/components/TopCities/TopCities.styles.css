@@ -1,0 +1,18 @@
+.place-list-container {
+    max-height: 300px; 
+    overflow: auto; 
+  }
+  
+  .place-list {
+    width: 100%; 
+  }
+  
+  .place-item {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .place-item.selected {
+    color: #3B8BFD; 
+  }
+  

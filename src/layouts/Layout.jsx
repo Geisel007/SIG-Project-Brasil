@@ -1,17 +1,19 @@
 // React
-import React from 'react'
+import React, { useState } from 'react'
 // Components
 import View from '../components/Wrappers/View/View'
 import Map from '../components/Map/Map'
-import Label from '../components/Wrappers/Label/Label'
 import TopCities from '../components/TopCities/TopCities'
 import Viewer from '../components/Viewer/Viewer'
+import InfoCity from '../components/InfoCity/InfoCity'
 // Data
-import GeoJSON from '../../grassData/results/GeoJson/BRA_adm0.json'
+import GeoJSON from '../../grassData/results/GeoJson/BRA_adm3.json'
 // Styles
 import './Layout.styles.css'
 
 const Layout = () => {
+
+  const [selectedPlaceIndex, setSelectedPlaceIndex] = useState(0)
   
   return (
     <View
@@ -23,9 +25,10 @@ const Layout = () => {
         <View
           className={'sub-container'}
         >
-          top cities
-          <TopCities 
-            cities={GeoJSON.features}
+          <h2>MEJORES CLIMAS DE BRASIL</h2>
+          <TopCities
+            selectedPlaceIndex={selectedPlaceIndex}
+            setSelectedPlaceIndex={setSelectedPlaceIndex}
           />
         </View>
         <View
@@ -45,7 +48,9 @@ const Layout = () => {
         <View
           className={'sub-container'}
         >
-          city info
+          <InfoCity
+            selectedPlaceIndex={selectedPlaceIndex}
+          />
         </View>
         <View
           className={'sub-container'}

@@ -35,8 +35,23 @@
 
 * {
   font-family: 'Assistant-Regular';
+  text-align: justify;
 }
 
 body {
   margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #0067FF;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
 }
