@@ -1,0 +1,20 @@
+.viewer {
+  padding: 10px;
+}
+
+.viewer .options {
+  display: flex;
+  gap: 1%;
+}
+
+.viewer .raster-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.raster-image-container .raster-image {
+  height: 300px;
+  width: 300px;
+}

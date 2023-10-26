@@ -5,6 +5,7 @@ import View from '../components/Wrappers/View/View'
 import Map from '../components/Map/Map'
 import Label from '../components/Wrappers/Label/Label'
 import TopCities from '../components/TopCities/TopCities'
+import Viewer from '../components/Viewer/Viewer'
 // Data
 import GeoJSON from '../../grassData/results/GeoJson/BRA_adm0.json'
 // Styles
@@ -26,16 +27,10 @@ const Layout = () => {
           <TopCities 
             cities={GeoJSON.features}
           />
-
         </View>
         <View
           className={'sub-container'}
         >
-          <Label
-            className={'subtitle1'}
-          > 
-            B R A S I L 
-          </Label>
           <Map
             latitude={-15}
             longitude={-55}
@@ -55,7 +50,7 @@ const Layout = () => {
         <View
           className={'sub-container'}
         >
-          city images
+          <Viewer/>
         </View>
       </View>
     </View>

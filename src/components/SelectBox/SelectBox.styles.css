@@ -1,0 +1,12 @@
+.custom-select-box {
+  width: 150px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+}
+
+.custom-select-box option {
+  font-size: 16px;
+}
