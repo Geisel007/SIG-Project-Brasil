@@ -1,5 +1,6 @@
 .viewer {
   padding: 10px;
+  overflow: auto;
 }
 
 .viewer .options {
@@ -17,4 +18,10 @@
 .raster-image-container .raster-image {
   height: 300px;
   width: 300px;
+}
+
+@media screen and (max-width: 768px) {
+  .options {
+    flex-wrap: wrap;
+  }
 }

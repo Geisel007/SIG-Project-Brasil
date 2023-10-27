@@ -6,6 +6,8 @@ import Map from '../components/Map/Map'
 import TopCities from '../components/TopCities/TopCities'
 import Viewer from '../components/Viewer/Viewer'
 import InfoCity from '../components/InfoCity/InfoCity'
+// Constatnts
+import { Constants } from '../constants/Constants'
 // Data
 import GeoJSON from '../../grassData/results/GeoJson/BRA_adm3.json'
 // Styles
@@ -48,6 +50,7 @@ const Layout = () => {
         <View
           className={'sub-container'}
         >
+          <h2>{Constants.bestCities[selectedPlaceIndex]}</h2>
           <InfoCity
             selectedPlaceIndex={selectedPlaceIndex}
           />
