@@ -1,6 +1,8 @@
 .place-list-container {
     max-height: 300px; 
     overflow: auto; 
+    margin-bottom: 30px;
+    box-sizing: border-box;
   }
   
   .place-list {

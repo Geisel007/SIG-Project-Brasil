@@ -20,7 +20,6 @@ const InfoCity = ({
     <View 
       className={'info-city-container'}
     >
-      <h2>{Constants.bestCities[selectedPlaceIndex]}</h2>
       {Constants.infoBestCities[selectedPlaceIndex]}
     </View>
   )
