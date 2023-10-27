@@ -1,6 +1,5 @@
 .viewer {
   padding: 10px;
-  overflow: auto;
 }
 
 .viewer .options {
@@ -24,4 +23,9 @@
   .options {
     flex-wrap: wrap;
   }
+
+  .viewer {
+    overflow: auto;
+  }
+
 }
