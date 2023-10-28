@@ -1,4 +1,5 @@
 {
+  "homepage": "https://geisel007.github.io/SIG-Project-Brasil",
   "name": "admin-inclusiones-fe",
   "version": "1.0.0",
   "description": "",
@@ -6,7 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server .",
-    "build": "webpack ."
+    "build": "webpack .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -15,7 +18,6 @@
   "keywords": [],
   "author": "Geisel Montoya Solano",
   "license": "ISC",
-  "homepage": "",
   "devDependencies": {
     "@babel/cli": "^7.22.15",
     "@babel/core": "^7.22.20",
